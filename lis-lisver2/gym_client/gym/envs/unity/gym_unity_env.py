@@ -10,22 +10,36 @@ from gym import spaces
 import numpy as np
 import time
 
+aglib = []
+
+class port_number():
+        def __init__(self):
+            self.count = 4649
+
+        def incliment(self):
+            self.count += 1
+            print self.count
 
 class GymUnityEnv(gym.Env):
 
     def __init__(self):
+        if 'pnum' in globals():
+            self.pnum.incliment() 
+        else:
+            self.pnum = new port_number()
+            
         websocket.enableTrace(True)
-    	self.ws = websocket.create_connection("ws://localhost:4649/CommunicationGym")
+        print "ws://localhost:"+ str(pnum.count) +"/CommunicationGym" 
+    	self.ws = websocket.create_connection("ws://localhost:"+ str(self.pnum.count) +"/CommunicationGym")
+
+        print self.pnum.count
         self.action_space = spaces.Discrete(3)
         self.depth_image_dim = 32 * 32
         self.depth_image_count = 1
         self.observation, _, _ = self.receive()
 
-
     def reset(self):
         return self.observation
-
-
 
     def step(self, action):
 
@@ -65,4 +79,4 @@ class GymUnityEnv(gym.Env):
             break
 
     def close(self):
-        self.ws.close()
+        self.ws.close()u
