@@ -1,4 +1,4 @@
-# kit-wbai
+# kit-wbai　project 2016/10/10
 WBAI hackathons Summary
 
 The program is two-body agent to learn the movement and capture procedure by using the Deep Q-Network is one in which aimed to capture the target.
