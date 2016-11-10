@@ -1,16 +1,18 @@
 # kit-wbai　project 2016/10/10
 WBAI hackathons Summary
 
-The program is two-body agent to learn the movement and capture procedure by using the Deep Q-Network is one in which aimed to capture the target.
+In this program, two agents learn movement and capturing targets with
+the Deep Q-Network.
 
-・environment
+・Environment
 
-When started, the two bodies agent is on a three-dimensional space, the target creature is placed at random.
-The agent was used the same as LIS_ver2.
+When started, two agents and a target creature are placed at random on
+a three-dimensional space.
+The agents are of LIS_ver2.
 
+・Task
 
-・task
-
-Agent is to capture the target to flee at a faster rate than their own.
-
-The target can be moved faster than the agent. And it repeats random movement. If agent come close to target ,the target try to avoid the agent by set agein a randam movement destination.
+The agents are to capture the fleeing target.
+The target can move faster than the agents and repeats random movement.
+If the agents come close to the target, it tries to avoid them by
+setting its destination at random.
